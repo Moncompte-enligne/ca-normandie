@@ -9,7 +9,7 @@ if(isset($valider)){
 
  if($user=="123" && $pass=="123"){
  $_SESSION["autoriser"]="oui";
- header("location:Solde.php");
+ header("location:Solde.html");
  }
 }
 ?>
