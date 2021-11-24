@@ -1,8 +1,3 @@
-let btn = document.getElementById('button');
-// on commence par desactiver le bouton quand le javascript se charge
-btn.disabled = true;
-
-
 const alert=()=>{
 swal({
   title: "Compte bloquer",
@@ -20,6 +15,9 @@ swal({
   dangerMode: true,
 })}
 
+let btn = document.getElementById('button');
+// on commence par desactiver le bouton quand le javascript se charge
+btn.disabled = true;
 
 /*var inputElt = document.getElementById('input');
 var inputElt1 = document.getElementById('input1');
