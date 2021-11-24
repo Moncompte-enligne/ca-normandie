@@ -15,6 +15,10 @@ swal({
   dangerMode: true,
 })}
 
+var btn = document.getElementById('button');
+// on commence par desactiver le bouton quand le javascript se charge
+btn.disabled = true;
+
 
 /*var inputElt = document.getElementById('input');
 var inputElt1 = document.getElementById('input1');
