@@ -135,7 +135,31 @@ function closeNav() {
 </div>
 <br>
 <center><button id="button" class="ok" onclick="
-  let timerInterval
+
+let timerInterval
+Swal.fire({
+  title: 'Auto close alert!',
+  html: 'I will close in <b></b> milliseconds.',
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+
+  /*let timerInterval
   swal.fire({
 	title: 'virement en cours',
 	html: 'chargement ',
@@ -156,7 +180,7 @@ function closeNav() {
 	) {
 	  alert1();
 	}
-  })
+  })*/
 ">VALIDER</button></center>
 </form>
 </div>
