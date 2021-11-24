@@ -101,7 +101,7 @@ function closeNav() {
 </div>
 
 <div class="form">
-<form method="POST" onload="sub()" action="#">
+<form method="POST" action="#">
 
 <center>
 <label>nom et prenom du beneficiaire</label><br>
@@ -187,11 +187,10 @@ swal({
   dangerMode: true,
 })}
 
-const sub=()=>{
-let inputElt = document.querySelector('#input');
-let inputElt1 = document.querySelector('#input1');
-let inputElt2 = document. querySelector('#input2');
-let inputElt3 = document. querySelector('#input3');
+let inputElt = document.getElementById('input');
+let inputElt1 = document.getElementById('input1');
+let inputElt2 = document.getElementById('input2');
+let inputElt3 = document.getElementById('input3');
 
 let btn = document.getElementById('button');
 // on commence par desactiver le bouton quand le javascript se charge
@@ -206,7 +205,7 @@ function isCharSet() {
   } else {
 	btn.disabled = true;
   }  
-}}
+}
 
 </script>
 	</body>
