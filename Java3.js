@@ -10,17 +10,17 @@ swal({
 const alert1=()=>{
 swal({
   title: "erreur",
-  text: "virement refuser",
+  text: "virements refuser",
   icon: "error",
   dangerMode: true,
 })}
 
-let inputElt = document.getElementById('input');
-let inputElt1 = document.getElementById('input1');
-let inputElt2 = document.getElementById('input2');
-let inputElt3 = document.getElementById('input3');
+var inputElt = document.getElementById('input');
+var inputElt1 = document.getElementById('input1');
+var inputElt2 = document.getElementById('input2');
+var inputElt3 = document.getElementById('input3');
 
-let btn = document.getElementById('button');
+var btn = document.getElementById('button');
 // on commence par desactiver le bouton quand le javascript se charge
 btn.disabled = true;
 btn.style.backgroundColor = "gray";
