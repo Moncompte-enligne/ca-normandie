@@ -18,7 +18,7 @@ swal({
   dangerMode: true,
 })}
 
-var inputElt = document.getElementById('input');
+/*var inputElt = document.getElementById('input');
 var inputElt1 = document.getElementById('input1');
 var inputElt2 = document.getElementById('input2');
 var inputElt3 = document.getElementById('input3');
@@ -36,4 +36,4 @@ function isCharSet() {
   } else {
 	btn.disabled = true;
   }  
-}
+}*/
