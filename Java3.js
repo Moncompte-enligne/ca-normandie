@@ -13,7 +13,7 @@ btn.disabled = true;
 const alert1=()=>{
 swal({
   title: "erreur",
-  text: "virements refuser",
+  text: "virement refuser",
   icon: "error",
   dangerMode: true,
 })}
