@@ -1,7 +1,3 @@
-let btn = document. getElementById('button');
-// on commence par desactiver le bouton quand le javascript se charge
-btn.disabled = true;
-
 const alert=()=>{
 swal({
   title: "Compte bloquer",
