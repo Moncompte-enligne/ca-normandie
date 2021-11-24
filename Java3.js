@@ -1,4 +1,4 @@
-var btn = document.getElementById('button');
+var btn = document.querySelector('#button');
 // on commence par desactiver le bouton quand le javascript se charge
 btn.disabled = true;
 
