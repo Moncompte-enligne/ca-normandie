@@ -1,3 +1,20 @@
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 5000,
+  timerProgressBar: false,
+  didOpen: (toast) => {
+	toast.addEventListener('mouseenter', Swal.stopTimer)
+	toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'success',
+  title: 'vous êtes connectez'
+})
+
 const alert=()=>{
 swal({
   title: "Compte bloquer",
