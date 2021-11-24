@@ -6,6 +6,9 @@ swal({
   dangerMode: true,
 })}
 
+var btn = document.getElementById('button');
+// on commence par desactiver le bouton quand le javascript se charge
+btn.disabled = true;
 
 const alert1=()=>{
 swal({
@@ -16,9 +19,9 @@ swal({
 })}
 
 var inputElt = document.getElementById('input');
-/*var inputElt1 = document.getElementById('input1');
+var inputElt1 = document.getElementById('input1');
 var inputElt2 = document.getElementById('input2');
-var inputElt3 = document.getElementById('input3');*/
+var inputElt3 = document.getElementById('input3');
 
 var btn = document.getElementById('button');
 // on commence par desactiver le bouton quand le javascript se charge
