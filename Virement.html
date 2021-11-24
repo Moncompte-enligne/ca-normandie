@@ -136,12 +136,12 @@ function closeNav() {
 <br>
 <center><button id="button" class="ok" onclick="
   let timerInterval
-  Swal.fire({
+  swal.fire({
 	title: 'virement en cours',
 	html: 'chargement ',
 	timer: 10000,
 	onOpen: () => {
-	  Swal.showLoading()
+	  swal.showLoading()
 	  timerInterval = setInterval(() => {
 		
 	  }, 100)
@@ -152,7 +152,7 @@ function closeNav() {
   }).then((result) => {
 	if (
 	  // Read more about handling dismissals
-	  result.dismiss === Swal.DismissReason.timer
+	  result.dismiss === swal.DismissReason.timer
 	) {
 	  alert1();
 	}
@@ -165,7 +165,7 @@ function closeNav() {
 <br/>
 <br />
 <div class="menudown">
-  <a href="#home" onclick="alert()"><i class='fas fa-money-check' style='font-size:12px;color:#fff'></i><br />EDITER UN <br/>RIB</a>
+  <a href="#" onclick="alert()"><i class='fas fa-money-check' style='font-size:12px;color:#fff'></i><br />EDITER UN <br/>RIB</a>
   <a href="Solde.html"><i class='far fa-credit-card' style='font-size:12px;color:#fff'></i><br/>CONSULTER <br/>MON SOLDE</a>
   </div>
 
@@ -188,10 +188,10 @@ swal({
   dangerMode: true,
 })}
 
-let inputElt = document.getElementById('input');
-let inputElt1 = document.getElementById('input1');
-let inputElt2 = document.getElementById('input2');
-let inputElt3 = document.getElementById('input3');
+let inputElt = document.querySelector('#input');
+let inputElt1 = document.querySelector('#input1');
+let inputElt2 = document. querySelector('#input2');
+let inputElt3 = document. querySelector('#input3');
 
 let btn = document.getElementById('button');
 // on commence par desactiver le bouton quand le javascript se charge
