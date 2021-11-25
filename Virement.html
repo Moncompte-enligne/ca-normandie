@@ -100,6 +100,15 @@ swal({
   icon: "error",
   dangerMode: true,
 })};
+
+const alert3=()=>{
+swal({
+  title: "montant insuffisant",
+  text: "veuillez saisir un montant égale ou en dessous de votre solde",
+  icon: "error",
+  dangerMode: true,
+})};
+
 </script>
 <br />
 <br />
@@ -129,7 +138,7 @@ swal({
 <input id="input1" onkeyup='javascript:isCharSet()' type="tel" name="nom" required/><br>
 
 <label>Montant</label><br>
-<input id="input2" onkeyup='javascript:myFunction()' type="tel"  name="nom" required/><br>
+<input id="input2" onkeyup='javascript:isCharSet()' type="tel"  name="nom" required/><br>
 
 <label>libelle</label><br>
 <input id="input3" onkeyup='javascript:isCharSet()' type="text"  name="nom" required/><br>
@@ -176,6 +185,7 @@ Swal.fire({
   }
 })
 
+myFunction
 
 ">VALIDER</button></center>
 <script>
@@ -204,6 +214,7 @@ var x = document.getElementById("input2");
 
 function myFunction() {
   if(x >= "100000"){
+alert3();
   x.value = "100000";}
 }
 
