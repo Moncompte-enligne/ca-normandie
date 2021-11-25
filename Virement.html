@@ -156,7 +156,7 @@ swal({
 </form>
 </div>
 
-<center><button id="button" onkeyup="myFunction()" class="ok" onclick="
+<center><button id="button" class="ok" onclick="
   let timerInterval
 Swal.fire({
   title: 'virement en cours!',
@@ -175,6 +175,9 @@ Swal.fire({
     alert1();
   }
 })
+
+myFunction()
+
 ">VALIDER</button></center>
 <script>
 let inputElt = document.getElementById('input');
@@ -198,10 +201,10 @@ function isCharSet() {
   }  
 }
 
+var x = document.getElementById("input2");
 
 function myFunction() {
-  var x = document.getElementById("input2");
-  if(x>=100000){
+  if(x >= "100000"){
   x.value = "100000";}
 }
 
