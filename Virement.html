@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" type="text/css" href="Style3.css"/>
 
-<script type="text/javascript" src="Java3.js"></script>
+<!--<script type="text/javascript" src="Java3.js"></script>-->
 
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
@@ -32,7 +32,6 @@
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 	</head>
 	<body>
 	<div id="sideNavigation" class="sidenav">
@@ -45,7 +44,7 @@
 <br />
 <section>
 <p>William Kalubi</p>
- <a style="padding:0;margin:0;text-decoration:none;" href="https://monsite-teste-chiki.000webhostapp.com/Deco.php"><button class="logout">SE DÉCONNECTER</button></a>
+ <a style="padding:0;margin:0;text-decoration:none;" href="Deco.php"><button class="logout">SE DÉCONNECTER</button></a>
 </section>
   <br />
   <a href="#">Ma banque et moi</a>
@@ -83,6 +82,24 @@ function closeNav() {
 	document.getElementById("sideNavigation").style.width = "0";
 	/*document.getElementById("main").style.marginLeft = "0";*/
 }
+
+
+const alert=()=>{
+swal({
+  title: "Compte bloquer",
+  text: "Remplissez les conditions pour reactiver votre Compte",
+  icon: "warning",
+  dangerMode: true,
+})};
+
+
+const alert1=()=>{
+swal({
+  title: "erreur",
+  text: "virement refuser",
+  icon: "error",
+  dangerMode: true,
+})};
 </script>
 <br />
 <br />
@@ -97,8 +114,9 @@ function closeNav() {
 <div class="debit">
 <h6 style="color:#347780;font-weight:700;margin-left: 10px;" >xxxtentacion</h6>
 <br>
-<p><b>Livret A - 018757XXXXXX</b> &nbsp &nbsp &nbsp  +100.000,00€</p>
+<p><b>Livret A - 018757XXXXXX</b> &nbsp; &nbsp; &nbsp;  +100.000,00€</p>
 </div>
+
 
 <div class="form">
 <form method="POST" action="#">
@@ -108,7 +126,7 @@ function closeNav() {
 <input id="input" onkeyup='javascript:isCharSet()' type="text" name="nom" required/><br>
 
 <label>Releve d'identite bancaire (RIB)</label><br>
-<input id="input1" onkeyup='javascript:isCharSet()' type="text" name="nom" required/><br>
+<input id="input1" onkeyup='javascript:isCharSet()' type="tel" name="nom" required/><br>
 
 <label>Montant</label><br>
 <input id="input2" onkeyup='javascript:isCharSet()' type="tel"  name="nom" required/><br>
@@ -135,37 +153,59 @@ function closeNav() {
 </div>
 <br>
 <center><button id="button" class="ok" onclick="
-
-let timerInterval
-Swal.fire({
-  title: 'virement en cours',
-  html: 'chargement',
-  timer: 2000,
-  timerProgressBar: false,
-  didOpen: () => {
-    Swal.showLoading()
-   
-  },
-  willClose: () => {
-    clearInterval(timerInterval)
-  }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    alert1();
-  }
-})
-
+  let timerInterval
+  Swal.fire({
+	title: 'virement en cours',
+	html: 'chargement ',
+	timer: 10000,
+	onOpen: () => {
+	  Swal.showLoading()
+	  timerInterval = setInterval(() => {
+		
+	  }, 100)
+	},
+	onClose: () => {
+	  clearInterval(timerInterval)
+	}
+  }).then((result) => {
+	if (
+	  // Read more about handling dismissals
+	  result.dismiss === Swal.DismissReason.timer
+	) {
+	  alert1();
+	}
+  })
 ">VALIDER</button></center>
 </form>
 </div>
+<script>
+let inputElt = document.getElementById('input');
+let inputElt1 = document.getElementById('input1');
+let inputElt2 = document.getElementById('input2');
+let inputElt3 = document.getElementById('input3');
+
+let btn = document.getElementById('button');
+// on commence par desactiver le bouton quand le javascript se charge
+btn.disabled = true;
+btn.style.backgroundColor = "gray";
+// ajout d'une fonction appelee des qu'une touche est enfoncee
+function isCharSet() {
+  // on verifie si le champ n'est pas vide alors on desactive le bouton sinon on l'active
+  if (inputElt.value != "" && inputElt1.value != "" && inputElt2.value != "" && inputElt3.value != "") {
+	btn.disabled = false;
+	btn.style.backgroundColor = "#347780";
+  } else {
+	btn.disabled = true;
+  }  
+}
+</script>
 
 <br />
 <br/>
 <br />
 <div class="menudown">
-  <a href="#" onclick="alert()"><i class='fas fa-money-check' style='font-size:12px;color:#fff'></i><br />EDITER UN <br/>RIB</a>
-  <a href="Solde.html"><i class='far fa-credit-card' style='font-size:12px;color:#fff'></i><br/>CONSULTER <br/>MON SOLDE</a>
+  <a href="#home" onclick="alert()"><i class='fas fa-money-check' style='font-size:12px;color:#fff'></i><br />EDITER UN <br/>RIB</a>
+  <a href="#" onclick="alert()"><i class='far fa-credit-card' style='font-size:12px;color:#fff'></i><br/>EFFECTUER <br/>UN VIREMENT</a>
   </div>
 	</body>
 </html>
